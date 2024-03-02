@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Christian Peraza
+=======
+chris file to add
+>>>>>>> 279eaeecd3c64547f20ca49d10a3217ff0d32b0b
