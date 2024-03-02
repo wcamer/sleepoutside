@@ -13,16 +13,15 @@ const dataSource = new ProductData("tents");
 function addProductToCart(product) {
   let newArray = [];
   let array = getLocalStorage("so-cart");
-  if (array == null){
+  if (array == null) {
     array = newArray;
-    array.push(product)
-  }else{
-    array.push(product)
+    array.push(product);
+  } else {
+    array.push(product);
   }
-  
+
   setLocalStorage("so-cart", array);
 }
-
 
 // add to cart button event handler
 async function addToCartHandler(e) {
