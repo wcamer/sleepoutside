@@ -220,3 +220,10 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.cart-footer-hide {
+  /*container*/
+  /* background-color: pink; */
+  display: none;
+  font-size: 3em;
+}
