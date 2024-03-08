@@ -1,5 +1,4 @@
-import { setLocalStorage , getLocalStorage } from "./utils.mjs";
-
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
   export default class ProductDetails{
 
@@ -22,7 +21,22 @@ import { setLocalStorage , getLocalStorage } from "./utils.mjs";
         }
 
     addToCart(){
-        setLocalStorage("so-cart", this.product);
+        let newArray = [];
+        let oldArray = getLocalStorage("so-cart");
+        let array = [];
+        console.log("here is old array",oldArray)
+        if(oldArray == null){
+            oldArray = newArray // creates an empty array to be manipulated
+            oldArray.push(this.product)
+            array = oldArray
+        }
+        else{
+            oldArray.push(this.product)
+            array = oldArray;
+
+        }
+
+        setLocalStorage("so-cart", array);
     }
 
 
