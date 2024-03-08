@@ -21,8 +21,7 @@
     },
     "ListPrice": 199.99,
     "FinalPrice": 199.99,
-    "TopProduct" : true
-
+    "TopProduct": true
   },
   {
     "Id": "985RF",
@@ -45,7 +44,7 @@
     },
     "ListPrice": 199.99,
     "FinalPrice": 199.99,
-    "TopProduct" : true
+    "TopProduct": true
   },
   {
     "Id": "989CG",
@@ -68,7 +67,7 @@
     },
     "ListPrice": 179.99,
     "FinalPrice": 179.99,
-    "TopProduct" : false
+    "TopProduct": false
   },
   {
     "Id": "985PR",
@@ -91,7 +90,7 @@
     },
     "ListPrice": 349.99,
     "FinalPrice": 349.99,
-    "TopProduct" : true
+    "TopProduct": true
   },
   {
     "Id": "880RT",
@@ -114,7 +113,7 @@
     },
     "ListPrice": 179.99,
     "FinalPrice": 179.99,
-    "TopProduct" : false
+    "TopProduct": false
   },
 
   {
@@ -139,6 +138,6 @@
     },
     "ListPrice": 69.99,
     "FinalPrice": 69.99,
-    "TopProduct" : true
+    "TopProduct": true
   }
 ]
