@@ -4,21 +4,6 @@ function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
-  let numberOfItemsInCart =
-    document.querySelector(".product-list").childElementCount;
-
-  //total in cart functionality
-  if (numberOfItemsInCart > 0) {
-    let cartTotalSection = document.querySelector(".cart-footer-hide");
-    cartTotalSection.style.color = "green";
-    cartTotalSection.style.display = "block";
-  }
-  let total = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    total += cartItems[i].FinalPrice;
-  }
-  document.querySelector(".cart-total").textContent =
-    `Total: $${total.toFixed(2)}`;
 }
 
 function cartItemTemplate(item) {
