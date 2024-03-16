@@ -1,5 +1,7 @@
 import { renderListWithTemplate } from "./utils.mjs"
 
+
+
 function productCartTemplate(product){
 
 let template = `<li class="product-card">

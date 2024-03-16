@@ -1,5 +1,6 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
+
   export default class ProductDetails{
 
     constructor(productId, dataSource){
@@ -24,9 +25,10 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
         let newArray = [];
         let oldArray = getLocalStorage("so-cart");
         let array = [];
-        console.log("here is old array",oldArray)
+        //console.log("here is old array",oldArray)
         if(oldArray == null){
             oldArray = newArray // creates an empty array to be manipulated
+            console.log("????????????????\n",this.product)
             oldArray.push(this.product)
             array = oldArray
         }
