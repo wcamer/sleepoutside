@@ -25,20 +25,51 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
         let newArray = [];
         let oldArray = getLocalStorage("so-cart");
         let array = [];
-        //console.log("here is old array",oldArray)
+        console.log("here is old array",oldArray)
         if(oldArray == null){
             oldArray = newArray // creates an empty array to be manipulated
-            console.log("????????????????\n",this.product)
+            
+            this.product["quantity"] = 1 // gives the product object an attrbute of "quantity" and sets value at 1
+            //console.log("????????????????\nstarting a new cart with a new product\n",this.product)
             oldArray.push(this.product)
             array = oldArray
         }
         else{
-            oldArray.push(this.product)
+            
+            let dupCheck = [] // this will hold product Ids that will be used to check if an incoming product is already in oldArray
+            for(let i = 0; i < oldArray.length; i++){
+                //console.log("loading the dup checker")
+                dupCheck.push(oldArray[i].Id)
+            }
+
+
+            //if dupCheck doesn't already have the incoming product.Id...
+            if(!dupCheck.includes(this.product.Id)){
+                //give the incoming product a "quantity" attribute and give it a value of 1
+                this.product["quantity"] = 1
+                oldArray.push(this.product)
+                //add the product.Id to dupCheck to prevent future dups
+                dupCheck.push(this.product.Id)
+            }else{
+                //means the incoming product.Id already exists so we find it in the oldArray and increase the quantity value by 1
+                for(let i = oldArray.length -1; i >= 0; i--){
+                        if(oldArray[i].Id == this.product.Id){
+                            oldArray[i].quantity += 1
+                        }
+                }
+
+            }
+
+            
             array = oldArray;
 
         }
 
+            
+
+
         setLocalStorage("so-cart", array);
+        
     }
 
 
