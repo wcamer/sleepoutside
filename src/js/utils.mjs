@@ -43,3 +43,62 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
  
 
 }
+
+
+
+
+export function renderWithTemplate(template, parentElement, data, callBack) {
+  
+  parentElement.insertAdjacentHTML("afterbegin",template);
+  if(callBack){
+    callBack(data);
+  }
+
+ 
+
+}
+
+async function loadTemplate(path){
+  //console.log("--------------------",path) "../partials/header.html"
+  //const html = await fetch(path).then((response)=>{return response.text()}); //getting the path and converting it to text
+  // console.log("$$$$$$$$$$$$$$$$$$",html)
+  // const template = document.createElement("template");//creating a template tag
+  // console.log("?????????????", template)
+  // // const template = templateT.content.cloneNode(true)//.getElementsById("document-fragment")
+  
+  // let templateC = template.cloneNode(true)
+  // console.log("^^^^^^^^^^^^^^^ clone template here",template)
+  // templateC.innerHTML =   html//.text(); //this needs to await so its not just showing a promise
+  // console.log("!!!!!!!!!!!!!",templateC.content)//.querySelector("#document-gragment"))
+  //const template = document.createElement("template")
+  //let templateC = template.content.childNodes[1]
+  //console.log("????????????????",template)
+  //template.innerHTML = html 
+  //let templateC = template.content.cloneNode(true)
+  //console.log("!!!!!!!!!!!!!!!",template.content.childNodes[1])
+  //console.log(">>>>>>>>>>>>>>>>>>>>>",templateC.content)
+  // template.content.childNodes.forEach(node => {
+  //   console.log(node);
+  // });/
+  const html = await fetch(path).then((response)=>{return response.text()});
+  const template = document.createElement("template")
+  template.innerHTML = html 
+  return template.innerHTML//.content.childNodes[1];
+
+}
+
+export async function loadHeaderFooter (){
+  //Making the header piece
+  let headerSection = document.querySelector("#headerPiece") //grabbing our header section in the DOM
+  let hPathTemplate = await loadTemplate("../partials/header.html")
+  //console.log("#########################",hPathTemplate)
+  renderWithTemplate(hPathTemplate, headerSection)
+  
+  //Making the footer piece
+  let footerSection = document.querySelector("#footerPiece") //grabbing our footer section in the DOM
+  let fPathTemplate = await loadTemplate("../partials/footer.html")
+  renderWithTemplate(fPathTemplate, footerSection)
+  
+
+
+}
