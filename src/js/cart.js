@@ -11,7 +11,6 @@ function renderCartContents() {
   let numberOfItemsInCart =
     document.querySelector(".product-list").childElementCount;
 
-
   //total in cart functionality
   if (numberOfItemsInCart > 0) {
     let cartTotalSection = document.querySelector(".cart-footer-hide");
@@ -20,7 +19,7 @@ function renderCartContents() {
   }
   let total = 0;
   for (let i = 0; i < cartItems.length; i++) {
-    total += (cartItems[i].FinalPrice * cartItems[i].quantity);
+    total += cartItems[i].FinalPrice * cartItems[i].quantity;
   }
   document.querySelector(".cart-total").textContent =
     `Total: $${total.toFixed(2)}`;

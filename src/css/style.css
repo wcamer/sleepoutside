@@ -136,18 +136,16 @@ button {
 }
 
 /*Style for product grid*/
-#product-grid{
+#product-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-#product-grid div{
+#product-grid div {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-
-
 
 /* Styles for product lists */
 .product-card {
