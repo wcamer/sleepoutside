@@ -123,7 +123,8 @@ button {
   padding: 0.5em;
 }
 .product-list {
-  display: flex;
+  display: flex; /*used to be flex*/
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   flex-flow: row wrap;
   justify-content: space-between;
   list-style-type: none;
@@ -133,6 +134,19 @@ button {
   text-decoration: none;
   color: var(--dark-grey);
 }
+
+/*Style for product grid*/
+#product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#product-grid div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 /* Styles for product lists */
 .product-card {
   flex: 1 1 45%;
