@@ -4,17 +4,18 @@ import { renderListWithTemplate } from "./utils.mjs"
 
 function productCartTemplate(product){
 
-let template = `<li class="product-card">
-            <a href="product_pages/index.html?product=${product.Id}">
+let template = `
+        <li class="product-card">
+            <a href="/product_pages/index.html?product=${product.Id}">
               <img
-                src="${product.Image}"
+                src="${product.Images.PrimaryMedium}"
                 alt="${product.Name}"
               />
               <h3 class="card__brand">${product.Brand.Name}</h3>
               <h2 class="card__name">${product.NameWithoutBrand}</h2>
               <p class="product-card__price">$${product.FinalPrice}</p>
             </a>
-          </li>`
+        </li>`
     return template
 }
 
@@ -27,7 +28,9 @@ export default class ProductListing {
     }
 
     async init(){
-        const list = await this.dataSource.getData() //an array
+        //changed as per w3 instructions
+        // const list = await this.dataSource.getData() //an array
+        const list = await this.dataSource.getData(this.category)/////////////
         for(let i = 0; i < list.length; i++){
             if (list[i].TopProduct == true){
                 
