@@ -16,7 +16,7 @@
       <div class="logo">
         <img src="images/noun_Tent_2517.svg" alt="tent image for logo" />
 
-        <a href="index.html">
+        <a href="../index.html">
           Sleep
           <span class="highlight">Outside</span>
         </a>
@@ -59,9 +59,80 @@
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
+        
       </section>
+      <form id="custCheckoutForm">
+        <fieldset id="custName">
+          <legend>Customer Name</legend>
+          <label for="customer_fName">First Name</label><br>
+          <input type="text" id="customer_fName" name="customer_fName" required><br>
+          <label for="customer_lName">Last name</label><br>
+          <input type="text" id="customer_lName" name="customer_lName" required>
+        </fieldset>
+      
+        <fieldset id="address">
+          <legend>Address</legend>
+          <label for="street_address">Street Address</label><br>
+          <input type="text" id="street_address" name="street_address" required><br><br>
+          <label for="city">City</label><br>
+          <input type="text" id="city" name="city" required><br><br>
+          <label for="state">State</lable><br>
+          <input type="text" id="state" name="state" required><br><br>
+          <label for="zipCode"> Zip Code</label><br>
+          <input type="text" id="zipCode" name="zipCode" required><br><br>
+        </fieldset>
+      
+        <fieldset id="payment">
+          <legend>Payment</legend>
+          <label for="ccn">Credit Card Number</label><br>
+          <input type="text" id="ccn" name="ccn" required><br><br>
+          <label for="expDate">Expiration Date</label><br>
+          <input type="date" id="expDate" required><br><br>
+          <label for="secCode">Security Code</label><br>
+          <input type="text" id="secCode" name="secCode" required><br><br>
+        </fieldset>
+      
+        <button type="submit">Checkout</button>
+      </form>
+
+      <sectiom id="orderSummary">
+        <h3>Order Summary</h3>
+        <ul>
+            <li>
+              <label for="orderSubtotal">Subtotal: $<span id="orderSubtotalNum">ddd</span></label>
+                <!-- <p id="orderSubtotalNum">45</p> -->
+            </li>
+
+            <li>
+              <label for="shipping">Shipping: <span id="shippingNum"></span></label>
+
+            </li>
+
+            <li>
+              <label for="tax">Tax: <span id="taxNum"></span></label>
+              
+            </li> 
+            
+            <!-- <li>
+              <label for="orderTotal">Order Total: <span id="orderTotalNum"></span></label>
+               
+            </li> -->
+
+          
+<!--           
+          <li id="shipping">Shipping Estimate</label>
+          <li id="tax">Tax</label>
+          <li id="orderTotal">Order Total</label> -->
+      
+        
+      
+        </ul>
+        <p id="orderTotal">Order Total: 3000</p>
+
+      </sectiom>
+      
     </main>
 
-    <footer id="footerPiece">&copy;NOT a real business</footer>
+    <footer id="footerPiece"></footer>
   </body>
 </html>
