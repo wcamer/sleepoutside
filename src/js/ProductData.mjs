@@ -1,5 +1,8 @@
 const baseURL = import.meta.env.VITE_SERVER_URL;
 
+// const ne = baseURL + "checkout"
+// console.log(baseURL,"$$$$$$$$$$$$$$$\n", ne)
+
 function convertToJson(res) {
   if (res.ok) {
     return res.json();
