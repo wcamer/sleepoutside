@@ -13,14 +13,11 @@
   </head>
 
   <body>
-    <header class="divider" id="headerPiece">
-      
-    </header>
+    <header class="divider" id="headerPiece"></header>
 
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
-        
       </section>
       <form id="checkoutForm">
         <!-- Below is the testing set of the form. to use comment out the live production code and uncomment the testing 
@@ -56,73 +53,80 @@
         end of the testing form below is the production-->
         <fieldset id="custName">
           <legend>Customer Name</legend>
-          <label for="fname">First Name</label><br>
-          <input type="text" id="fname" name="fname"  required><br>
-          <label for="lname">Last name</label><br>
-          <input type="text" id="lname" name="lname" required>
+          <label for="fname">First Name</label><br />
+          <input type="text" id="fname" name="fname" required /><br />
+          <label for="lname">Last name</label><br />
+          <input type="text" id="lname" name="lname" required />
         </fieldset>
-      
+
         <fieldset id="address">
           <legend>Address</legend>
-          <label for="street">Street Address</label><br>
-          <input type="text" id="street" name="street" required><br><br>
-          <label for="city">City</label><br>
-          <input type="text" id="city" name="city"  required><br><br>
-          <label for="state">State</label><br>
-          <input type="text" id="state" name="state"  required><br><br>
-          <label for="zip"> Zip Code</label><br>
-          <input type="text" id="zip" name="zip"  required><br><br>
+          <label for="street">Street Address</label><br />
+          <input type="text" id="street" name="street" required /><br /><br />
+          <label for="city">City</label><br />
+          <input type="text" id="city" name="city" required /><br /><br />
+          <label for="state">State</label><br />
+          <input type="text" id="state" name="state" required /><br /><br />
+          <label for="zip"> Zip Code</label><br />
+          <input type="text" id="zip" name="zip" required /><br /><br />
         </fieldset>
-      
+
         <fieldset id="payment">
           <legend>Payment</legend>
-          <label for="cardNumber">Credit Card Number</label><br>
-          <input type="text" id="cardNumber" name="cardNumber"  required><br><br>
-          <label for="expiration">Expiration Date</label><br>
-          <input type="text" id="expiration" name="expiration"   required><br><br>
-          <label for="code">Security Code</label><br>
-          <input type="text" id="code" name="code"  required><br><br>
+          <label for="cardNumber">Credit Card Number</label><br />
+          <input
+            type="text"
+            id="cardNumber"
+            name="cardNumber"
+            required
+          /><br /><br />
+          <label for="expiration">Expiration Date</label><br />
+          <input
+            type="text"
+            id="expiration"
+            name="expiration"
+            required
+          /><br /><br />
+          <label for="code">Security Code</label><br />
+          <input type="text" id="code" name="code" required /><br /><br />
         </fieldset>
-      
-        <input type="submit" value="Checkout" id="#checkoutSubmitButton"></input>
+
+        <input type="submit" value="Checkout" id="#checkoutSubmitButton" />
       </form>
 
       <section id="orderSummary">
         <h3>Order Summary</h3>
         <ul>
-            <li>
-              <label for="orderSubtotal">Subtotal: <span id="orderSubtotalNum">ddd</span></label>
-                <!-- <p id="orderSubtotalNum">45</p> -->
-            </li>
+          <li>
+            <label for="orderSubtotal"
+              >Subtotal: <span id="orderSubtotalNum">ddd</span></label
+            >
+            <!-- <p id="orderSubtotalNum">45</p> -->
+          </li>
 
-            <li>
-              <label for="shipping">Shipping: <span id="shippingNum"></span></label>
+          <li>
+            <label for="shipping"
+              >Shipping: <span id="shippingNum"></span
+            ></label>
+          </li>
 
-            </li>
+          <li>
+            <label for="tax">Tax: <span id="taxNum"></span></label>
+          </li>
 
-            <li>
-              <label for="tax">Tax: <span id="taxNum"></span></label>
-              
-            </li> 
-            
-            <!-- <li>
+          <!-- <li>
               <label for="orderTotal">Order Total: <span id="orderTotalNum"></span></label>
                
             </li> -->
 
-          
-<!--           
+          <!--           
           <li id="shipping">Shipping Estimate</label>
           <li id="tax">Tax</label>
           <li id="orderTotal">Order Total</label> -->
-      
-        
-      
         </ul>
         <p id="orderTotal">Order Total: 3000</p>
         <!-- <button type="submit"  id="#checkoutSubmitButton">Checkout</button> -->
       </section>
-      
     </main>
 
     <footer id="footerPiece"></footer>

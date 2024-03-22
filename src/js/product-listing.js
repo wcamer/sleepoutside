@@ -16,5 +16,3 @@ const myProdList = new ProductListing(category, dataSource, list);
 // console.log("88888888888888888888",myProdList)
 
 myProdList.init();
-
-
