@@ -97,6 +97,46 @@ button {
 /* End utility classes */
 
 /* Cart icon styles */
+
+/* @keyframes cartAdd {
+  0%{
+    transform: rotate(0.99)
+    
+  }
+
+  50%{
+    transform: rotate(0.99)
+    
+  }
+
+  100%{
+    transform: rotate(0.99) translateY(-400px) scale(5)
+    
+  }
+  
+  
+} */
+@keyframes cartAdd {
+  10% {
+    transform: rotate(9turn) scale(9);
+    background-color: blue;
+  }
+
+  50% {
+    background-color: green;
+    transform: scale(5) rotate(3turn);
+  }
+  100% {
+    background-color: white;
+    transform: scale(1);
+  }
+}
+
+/* Apply the animation to the SVG */
+/* .cart svg {
+  animation: rotate 2s linear infinite; 
+} */
+
 .cart {
   padding-top: 1em;
   position: relative;
@@ -105,6 +145,7 @@ button {
 
 .cart svg {
   width: 25px;
+  /* animation: cartAdd ease-in-out 10s  ; */
 }
 .cart:hover svg {
   fill: gray;
@@ -215,6 +256,32 @@ button {
   grid-row: 2;
   grid-column: 3;
 }
+
+@keyframes itemAdded {
+  0% {
+    opacity: 0.1;
+    background-color: blue;
+  }
+
+  50% {
+    opacity: 1;
+    background-color: green;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.addToCartNotify {
+  text-align: center;
+  background-color: green;
+  color: white;
+  margin: 1%;
+  padding: 5%;
+  animation: itemAdded 3s ease-in-out;
+}
+/* .cartLogo{
+  animation: cartAdd 3s ease-in-out infinite;
+} */
 
 @media screen and (min-width: 500px) {
   body {

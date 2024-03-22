@@ -22,10 +22,15 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
         }
 
     addToCart(){
+       
+
+        
         let newArray = [];
         let oldArray = getLocalStorage("so-cart");
         let array = [];
         console.log("here is old array",oldArray)
+
+
         if(oldArray == null){
             oldArray = newArray // creates an empty array to be manipulated
             
@@ -65,10 +70,35 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
         }
 
-            
-
 
         setLocalStorage("so-cart", array);
+
+        //animation for cart logo when an item is added to the cart
+        let logo = document.querySelector(".cart svg")
+        let ls = logo.style
+        ls.animationName = "cartAdd"
+        ls.animationDuration = "5s"
+
+        //code for the box that says "item added to cart "
+        let main = document.querySelector("main")
+        let div = document.createElement("div")
+        let h2 = document.createElement("h2")
+
+        div.classList.add("addToCartNotify")
+        h2.innerHTML= "Item Added To Cart!"
+        div.appendChild(h2)
+        main.appendChild(div)
+
+        setTimeout(() =>{
+            main.removeChild(div)
+            //resets the animation to none so it can be triggered every time 
+            ls.animationName ="none"
+           
+        }, 5000)
+        
+        
+            
+        
         
     }
 
