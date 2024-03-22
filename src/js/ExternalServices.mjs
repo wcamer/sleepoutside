@@ -3,15 +3,25 @@ const baseURL = import.meta.env.VITE_SERVER_URL;
 // const ne = baseURL + "checkout"
 // console.log(baseURL,"$$$$$$$$$$$$$$$\n", ne)
 
-function convertToJson(res) {
+////before the refactor
+// function convertToJson(res) {
+//   if (res.ok) {
+//     return res.json();
+//   } else {
+//     throw new Error("Bad Response");
+//   }
+// }
+
+async function convertToJson(res) {
+  let data = await res.json() 
   if (res.ok) {
-    return res.json();
+    return data;
   } else {
-    throw new Error("Bad Response");
+    throw  { name: "servicesError", message: data};
   }
 }
 
-export default class ProductData {
+export default class ExternalServices {
   constructor(category) {
     ////Removed as per instructions
     // this.category = category;
@@ -19,7 +29,7 @@ export default class ProductData {
   }
 
   //updated per instructions
-async getData(category) {
+  async getData(category) {
     // return fetch(this.path)
     //   .then(convertToJson)
     //   .then((data) => data);
@@ -37,4 +47,18 @@ async getData(category) {
     //console.log("444444444444444",data,"\n555555555555555555555555",data.Result)
     return data.Result;
   }
+
+  async checkout(payload){
+    const options = {
+      method: "POST",
+      headers:{
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload)
+    }
+    return await fetch(baseURL +"checkout/", options).then(convertToJson(options))
+
+
+  }
+
 }
