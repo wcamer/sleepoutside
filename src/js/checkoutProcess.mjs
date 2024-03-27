@@ -1,4 +1,4 @@
-import { loadHeaderFooter, getLocalStorage, setLocalStorage} from "./utils.mjs";
+import { loadHeaderFooter, getLocalStorage, setLocalStorage, alertMessage} from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const eS = new ExternalServices
@@ -99,7 +99,7 @@ export default class CheckoutProcess {
       
         console.log(form)
         const formToJson = this.FormDataToJson(form)
-        console.log("88888888888888",formToJson)
+        //console.log("88888888888888",formToJson)
         formToJson["orderDate"] = new Date().toISOString()
         formToJson["orderTotal"] = this.orderTotal
         formToJson["shipping"] = this.shipping
@@ -112,6 +112,8 @@ export default class CheckoutProcess {
             location.assign("/checkout/success.html")
         }catch (err) {
             console.log(err)
+            for(let mess in err.message)
+             alertMessage(err.message[mess])
         }
 
 
